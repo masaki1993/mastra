@@ -39,7 +39,7 @@ export class Workflow<
   #retryConfig?: RetryConfig;
   #mastra?: Mastra;
   #runs: Map<string, WorkflowInstance<TSteps, TTriggerSchema>> = new Map();
-  #isNested: boolean = false;
+  isNested: boolean = false;
   #onStepTransition: Set<(state: WorkflowRunState) => void | Promise<void>> = new Set();
   // registers stepIds on `after` calls
   #afterStepStack: string[] = [];
@@ -951,12 +951,12 @@ export class Workflow<
   }
 
   setNested(isNested: boolean) {
-    this.#isNested = isNested;
+    this.isNested = isNested;
   }
 
-  get isNested() {
-    return this.#isNested;
-  }
+  // get isNested() {
+  //   return this.#isNested;
+  // }
 
   toStep(): Step<TStepId, TTriggerSchema, z.ZodType<WorkflowRunResult<TTriggerSchema, TSteps, TResultSchema>>, any> {
     const x = workflowToStep<TSteps, TStepId, TTriggerSchema, TResultSchema>(this, { mastra: this.#mastra });
