@@ -1,5 +1,15 @@
 # @mastra/upstash
 
+## 0.2.2-alpha.3
+
+### Patch Changes
+
+- 88fa727: Added getWorkflowRuns for libsql, pg, clickhouse and upstash as well as added route getWorkflowRunsHandler
+- Updated dependencies [88fa727]
+- Updated dependencies [6330967]
+- Updated dependencies [6330967]
+  - @mastra/core@0.8.0-alpha.3
+
 ## 0.2.2-alpha.2
 
 ### Patch Changes

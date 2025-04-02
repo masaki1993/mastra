@@ -1,5 +1,18 @@
 # @mastra/deployer
 
+## 0.2.6-alpha.4
+
+### Patch Changes
+
+- 88fa727: Added getWorkflowRuns for libsql, pg, clickhouse and upstash as well as added route getWorkflowRunsHandler
+- 6330967: Enable route timeout using server options
+- 6330967: Add support for configuration of server port using Mastra instance
+- Updated dependencies [88fa727]
+- Updated dependencies [6330967]
+- Updated dependencies [6330967]
+  - @mastra/core@0.8.0-alpha.3
+  - @mastra/server@0.0.1-alpha.1
+
 ## 0.2.6-alpha.3
 
 ### Patch Changes

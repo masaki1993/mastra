@@ -1,5 +1,19 @@
 # @mastra/dane
 
+## 0.0.12-alpha.3
+
+### Patch Changes
+
+- Updated dependencies [88fa727]
+- Updated dependencies [6330967]
+- Updated dependencies [6330967]
+  - @mastra/upstash@0.2.2-alpha.3
+  - @mastra/core@0.8.0-alpha.3
+  - @mastra/github@1.1.15-alpha.3
+  - @mastra/mcp@0.3.7-alpha.3
+  - @mastra/memory@0.2.7-alpha.3
+  - @mastra/rag@0.1.15-alpha.3
+
 ## 0.0.12-alpha.2
 
 ### Patch Changes
