@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "mastra dev",
-    "test:browser": "tsx src/test-browser-gemini.ts"
+    "test:browser": "tsx src/test-browser-gemini.ts",
+    "test:image": "tsx src/test-image-tools.ts",
+    "test:audio-video": "tsx src/test-audio-video.ts"
   },
   "keywords": [],
   "author": "",

@@ -30,5 +30,7 @@ export const weatherTool = createTool({
 
 export * from './database';
 export * from './wordpress';
+export * from './images';
+export * from './audio';
 
 export { browserTool } from './browser';

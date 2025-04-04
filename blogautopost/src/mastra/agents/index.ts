@@ -3,6 +3,8 @@ import { weatherTool } from '../tools';
 import { geminiModel } from '../models';
 export * from './contentPublisherAgent';
 export * from './browserAgent';
+export * from './imageAgent';
+export * from './audioAgent';
 
 export const weatherAgent = new Agent({
   name: 'Weather Agent',

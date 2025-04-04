@@ -36,3 +36,15 @@ export * from './mcp';
 export { browserTool } from './tools';
 export { browserAgent, createBrowserAgentWithMCP } from './agents/browserAgent';
 export { browserWorkflow } from './workflows/browserWorkflow';
+
+export { imageTools } from './tools/images';
+export { imageAgent } from './agents/imageAgent';
+export { blogImageWorkflow } from './workflows/blogImageWorkflow';
+
+export { audioTools } from './tools/audio';
+export { audioAgent, createAudioAgentWithCustomInstructions } from './agents/audioAgent';
+export { audioWorkflow } from './workflows/audioWorkflow';
+
+export { videoTools } from './tools/video';
+export { videoAgent, createVideoAgentWithCustomInstructions } from './agents/videoAgent';
+export { videoWorkflow } from './workflows/videoWorkflow';
