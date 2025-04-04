@@ -6,13 +6,16 @@ import path from 'path';
 import WPAPI from 'wpapi';
 
 const wp = new WPAPI({
-  endpoint: 'https://pre-e-s-court.com/wp-json',
-  username: 'yujiro',
-  password: 'Bluecheese09',
+  endpoint: process.env.WP_ENDPOINT || 'https://example.com/wp-json',
+  username: process.env.WP_USERNAME || 'username',
+  password: process.env.WP_PASSWORD || 'password',
   auth: true
 });
 
-wp.setHeaders('Authorization', 'Basic ' + Buffer.from('yujiro:uKzz dlJA 6HhZ bIZG 3ic4 mtPb').toString('base64'));
+const authToken = process.env.WP_AUTH_TOKEN || '';
+if (authToken) {
+  wp.setHeaders('Authorization', 'Basic ' + authToken);
+}
 
 const TEMP_IMAGE_DIR = path.join(process.cwd(), 'temp_images');
 
@@ -122,7 +125,7 @@ export const uploadImageToWpToolDef = createTool({
     try {
       return {
         id: 12345,
-        url: 'https://pre-e-s-court.com/wp-content/uploads/2023/01/example-image.jpg',
+        url: 'https://example.com/wp-content/uploads/2023/01/example-image.jpg',
         title: {
           rendered: title || 'Example Image',
         },
@@ -134,12 +137,12 @@ export const uploadImageToWpToolDef = createTool({
             thumbnail: {
               width: 150,
               height: 150,
-              url: 'https://pre-e-s-court.com/wp-content/uploads/2023/01/example-image-150x150.jpg',
+              url: 'https://example.com/wp-content/uploads/2023/01/example-image-150x150.jpg',
             },
             medium: {
               width: 300,
               height: 200,
-              url: 'https://pre-e-s-court.com/wp-content/uploads/2023/01/example-image-300x200.jpg',
+              url: 'https://example.com/wp-content/uploads/2023/01/example-image-300x200.jpg',
             },
           },
         },
