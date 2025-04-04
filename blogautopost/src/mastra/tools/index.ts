@@ -90,3 +90,4 @@ export * from './database';
 export * from './wordpress';
 
 export { browserTool } from './browser';
+export { searchTool } from './search';
