@@ -1,6 +1,6 @@
 import { Workflow, Step } from '@mastra/core/workflows';
 import { z } from 'zod';
-import { contentPlannerAgent, blogWriterAgent, editorAgent, contentPublisherAgent } from '../agents';
+import { contentPlannerAgent, blogWriterAgent, editorAgent, contentPublisherAgent, imageAgent } from '../agents';
 
 // 学童えすこーと専用ブログ生成ワークフロー（改善版）
 export const escortBlogWorkflow = new Workflow({
@@ -135,6 +135,13 @@ const publishStep = new Step({
     const article = context.getStepResult('editingStep')?.final_article;
     const topic = context.triggerData.topic;
 
+    const imageResult = await imageAgent.generate(`
+      以下の送迎サービスに関するブログ記事トピックに関連する画像を1枚検索し、最適化してWordPressにアップロードしてください。
+      ブログのトピック: ${topic}
+      
+      アップロードした画像のIDと情報を返してください。
+    `);
+    
     // タイトルを抽出（マークダウンから最初の # 行を取得）
     const titleMatch = article.match(/^#\s(.+)$/m);
     const title = titleMatch ? titleMatch[1] : topic;
