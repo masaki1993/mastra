@@ -1,6 +1,7 @@
 import { Agent } from '@mastra/core/agent';
 import { saveArticleToolDef, createCategoryToolDef, getCategoriesToolDef } from '../tools/database';
 import { createWpPostToolDef, getWpCategoriesToolDef, createWpCategoryToolDef } from '../tools/wordpress';
+import { uploadImageToWpToolDef, setFeaturedImageToolDef } from '../tools/images';
 import { geminiModel } from '../models';
 
 export const contentPublisherAgent = new Agent({
@@ -69,5 +70,8 @@ export const contentPublisherAgent = new Agent({
     // WordPressツール
     getWpCategories: getWpCategoriesToolDef,
     createWpPost: createWpPostToolDef,
+    
+    uploadImageToWp: uploadImageToWpToolDef,
+    setFeaturedImage: setFeaturedImageToolDef,
   },
 });

@@ -36,3 +36,7 @@ export * from './mcp';
 export { browserTool } from './tools';
 export { browserAgent, createBrowserAgentWithMCP } from './agents/browserAgent';
 export { browserWorkflow } from './workflows/browserWorkflow';
+
+export { imageTools } from './tools/images';
+export { imageAgent } from './agents/imageAgent';
+export { blogImageWorkflow } from './workflows/blogImageWorkflow';
